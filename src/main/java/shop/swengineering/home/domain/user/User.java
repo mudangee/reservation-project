@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,6 +12,9 @@ import shop.swengineering.home.domain.BaseEntity;
 import shop.swengineering.home.domain.user.dto.AccountRequestDto;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,15 +22,18 @@ import java.util.Set;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@EnableJpaAuditing
 public class User extends BaseEntity implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long memberId;
 
+    @NotNull
     @Column(nullable = false)
     private String username;
 
+    @NotNull
     @Column(nullable = false)
     private String password;
 
@@ -38,6 +45,7 @@ public class User extends BaseEntity implements UserDetails {
         this.username = username;
         this.password = password;
         this.userRole = userRole;
+
     }
 
     public User(AccountRequestDto accountRequestDto){
@@ -52,9 +60,8 @@ public class User extends BaseEntity implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Set<GrantedAuthority> roles = new HashSet<>();
-        for (GrantedAuthority role : roles) {
-            
-        }
+        roles.add(userRole);
+        return roles;
     }
 
     @Override

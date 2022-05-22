@@ -2,22 +2,21 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
+    <title>sign up</title>
 </head>
 <body>
-<h1>Login</h1> <hr>
-<img src="/img/marklogo-slogan.png"  alt="pic"/>
+<h1>Sign Up</h1> <hr>
 
-<form th:action="@{/login}" method="POST">
+<form th:action="@{/signup}" method="POST">
     email : <input type="email" name="username" placeholder="email"> <br>
+<!--    <p th:if="${#fields.hasErrors('itemNm')}" th:errors="*itemNm" class="fieldError"></p>-->
     password : <input type="password" name="password" placeholder="password"> <br>
-    <button type="submit">Login</button>
+    <button type="submit">Join</button>
 </form> <br>
 <div th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
-    <span >아이디나 비밀번호를 확인해주세요</span>
+    <span th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></span>
 </div>
 
-<a th:href="@{/signup}" methods="get">회원가입하기 →</a><br>
-<a th:href="@{/}" methods="get">홈 화면으로 이동 →</a>
+<a th:href="@{/login}">로그인 화면으로 이동 →</a>
 </body>
 </html>

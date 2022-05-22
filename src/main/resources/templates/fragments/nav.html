@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img th:src="@{/images/marklogo-slogan.png}" alt="" width="60%" height="auto">
+            <img src="/img/marklogo-slogan.png"  alt="pic"/>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -12,19 +12,19 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">예약내역</a>
+                    <a class="nav-link" th:href="@{/}">예약내역</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/account/register}" sec:authorize="!isAuthenticated()">register</a>
+                    <a class="nav-link" th:href="@{/signup}" methods="get" sec:authorize="!isAuthenticated()">register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/account/login}" sec:authorize="!isAuthenticated()">login</a>
+                    <a class="nav-link" th:href="@{/login}" methods="get" sec:authorize="!isAuthenticated()">login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" sec:authentication="name" sec:authorize="isAuthenticated()">사용자</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/account/logout}" methods="post" sec:authorize="isAuthenticated()">logout</a>
+                    <a class="nav-link" th:href="@{/logout}" methods="post" sec:authorize="isAuthenticated()">logout</a>
                 </li>
             </ul>
         </div>
