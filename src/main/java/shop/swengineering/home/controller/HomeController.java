@@ -11,4 +11,13 @@ public class HomeController {
     public String home() {
         return "main";
     }
+
+    @GetMapping("reservation")
+    public String reservation() {
+        return "reservation";
+    }
+    @GetMapping("history")
+    public String history() {
+        return "history";
+    }
 }
