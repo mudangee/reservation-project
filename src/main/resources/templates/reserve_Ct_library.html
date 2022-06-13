@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html>
+<head th:replace="fragments/header"></head>
+<style>
+    .gradient-custom {
+        /* fallback for old browsers */
+        background: #CCCCFF;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: #CCCCFF;
+
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: #CCCCFF;
+    }
+
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+        font-size: 1rem;
+        line-height: 2.15;
+        padding-left: .75em;
+        padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+        top: 13px;
+    }
+</style>
+<body>
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">중앙도서관 예약</h3>
+                        <form>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <label class="form-label" for="Name_Ct">대표자 이름</label>
+                                        <input type="text" id="Name_Ct" class="form-control form-control-lg" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <label class="form-label" for="ID_Ct">학번</label>
+                                        <input type="text" id="ID_Ct" class="form-control form-control-lg" />
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-15 mb-4 d-flex align-items-center">
+
+                                    <div class="form-outline datepicker w-100">
+                                        <label for="Purpose_Ct" class="form-label">이용 용도</label>
+                                        <input type="text" class="form-control form-control-lg" id="Purpose_Ct" />
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div class="form-outline">
+                                        <label class="form-label" for="Phone_Ct">대표자 연락처</label>
+                                        <input type="email" id="Phone_Ct" class="form-control form-control-lg" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4 pb-2">
+
+                                    <div class="form-outline">
+                                        <label class="form-label" for="People_Ct">인원</label>
+                                        <input type="tel" id="People_Ct" class="form-control form-control-lg" />
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <label class="form-label  select-label">세부 장소</label>
+                                    <select class="select form-control-lg">
+                                        <option value="1" disabled>Choose option</option>
+                                        <option value="2">유레카-CAN</option>
+                                        <option value="3">유레카-For</option>
+                                        <option value="4">유레카-WHY</option>
+                                        <option value="5">유레카-How</option>
+                                        <option value="6">유레카-IF</option>
+                                        <option value="7">유레카-But</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mr-15 mt-8 pt-10">
+                                <input class="btn btn-primary btn-lg" style = float:right type="날짜선택" value="날짜선택" />
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
