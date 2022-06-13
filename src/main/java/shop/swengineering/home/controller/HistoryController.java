@@ -14,7 +14,7 @@ public class HistoryController {
 
 
     private ReservationRepository reservationRepository;
-git
+
     @GetMapping("/history")
     public String history(Model model) {
        List<Reservation> reservations =reservationRepository.findAll();
