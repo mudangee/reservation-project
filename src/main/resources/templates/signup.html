@@ -14,25 +14,25 @@
         <form class="col-md-6 col-lg-3 team container" th:action="@{/signup}" method="POST">
             <!-- Name input -->
             <div class="form-outline mb-4">
-                <input type="text" id="registerName" name="name" class="form-control"/>
+                <input type="text" id="registerName" name="name" class="form-control" required/>
                 <label class="form-label" for="registerName">이름</label>
             </div>
 
             <!-- Email input -->
             <div class="form-outline mb-4">
-                <input type="email" id="registerEmail" name="username" class="form-control"/>
+                <input type="email" id="registerEmail" name="username" class="form-control" required/>
                 <label class="form-label" for="registerEmail">이메일</label>
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-                <input type="password" id="registerPassword" name="password" class="form-control"/>
+                <input type="password" id="registerPassword" name="password" class="form-control" required/>
                 <label class="form-label" for="registerPassword">비밀번호</label>
             </div>
 
             <!-- Repeat Password input -->
             <div class="form-outline mb-4">
-                <input type="password" id="registerRepeatPassword" class="form-control"/>
+                <input type="password" id="registerRepeatPassword" class="form-control" required/>
                 <label class="form-label" for="registerRepeatPassword">비밀번호 확인</label>
             </div>
 
