@@ -6,13 +6,12 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import shop.swengineering.home.domain.BaseEntity;
+import shop.swengineering.home.domain.reservation.Reservation;
 import shop.swengineering.home.domain.user.dto.AccountRequestDto;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Getter
 @Entity
@@ -34,6 +33,9 @@ public class User extends BaseEntity implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
+
+    @OneToMany(mappedBy = "reservationId")
+    private List<Reservation> reservations = new ArrayList<Reservation>();
 
     @Builder
     public User(String username, String password, UserRole userRole){
