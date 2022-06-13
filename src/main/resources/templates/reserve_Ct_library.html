@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<html>
+<!-- datepicker import -->
+
 <head th:replace="fragments/header"></head>
+
 <style>
     .gradient-custom {
         /* fallback for old browsers */
@@ -86,8 +88,8 @@
 
                             <div class="row">
                                 <div class="col-12">
-                                    <label class="form-label  select-label">세부 장소</label>
-                                    <select class="select form-control-lg">
+                                    <label class="form-label col-2 select-label">세부 장소</label>
+                                    <select class="select col-4 form-control-lg">
                                         <option value="1" disabled>Choose option</option>
                                         <option value="2">유레카-CAN</option>
                                         <option value="3">유레카-For</option>
@@ -96,13 +98,16 @@
                                         <option value="6">유레카-IF</option>
                                         <option value="7">유레카-But</option>
                                     </select>
+                                    <form class="">
+                                        <label for="reservationDate">예약일자:</label>
+                                        <input type="date" id="reservationDate" name="reservationDate">
+                                    </form>
+                                    <!-- https://www.w3schools.com/tags/att_input_type_date.asp -->
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button class="btn btn-primary me-md-2" type="button">예약</button>
                                 </div>
                             </div>
-
-                            <div class="mr-15 mt-8 pt-10">
-                                <input class="btn btn-primary btn-lg" style = float:right type="날짜선택" value="날짜선택" />
-                            </div>
-
                         </form>
                     </div>
                 </div>
