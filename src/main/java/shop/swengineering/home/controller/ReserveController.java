@@ -46,6 +46,7 @@ public class ReserveController {
     @PostMapping("/reserve_Ct_library")
     public String reserve_ct_save(@ModelAttribute ReservationDto reservationDto, Model model) {
         model.addAttribute("reservation", reservationDto);
+
         System.out.println(reservationDto.getRep_name());
         System.out.println(reservationDto.getPersonNum());
         System.out.println(reservationDto.getResPurpose());
@@ -65,21 +66,20 @@ public class ReserveController {
     @PostMapping("reserve_ground")
     public String reserve_ground_save(@ModelAttribute Reservation reservation, Model model) {
         model.addAttribute("reservation", reservation);
-        reservationRepository.save(reservation);
+        //reservationRepository.save(reservation);
         return "/history";
     }
 
     @PostMapping("reserve_elec_library")
     public String reserve_elec_save(@ModelAttribute Reservation reservation, Model model) {
         model.addAttribute("reservation", reservation);
-        reservationRepository.save(reservation);
         return "/history";
     }
 
     @PostMapping("reserve_gym")
     public String reserve_gym_save(@ModelAttribute Reservation reservation, Model model) {
         model.addAttribute("reservation", reservation);
-        reservationRepository.save(reservation);
+        //reservationRepository.save(reservation);
         return "/history";
     }
 
