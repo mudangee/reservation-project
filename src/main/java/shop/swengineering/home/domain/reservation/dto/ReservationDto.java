@@ -1,29 +1,15 @@
-package shop.swengineering.home.domain.reservation;
+package shop.swengineering.home.domain.reservation.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import shop.swengineering.home.domain.user.User;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
-@Entity
 @Getter
 @Setter
-@Table(name = "RESERVATIONS")
-public class Reservation {
-
-    @Id
-    @GeneratedValue
-    @Column(name = "RESERVATION_ID")
-    private Long reservationId;
-
-    @ManyToOne
-    @JoinColumn(name = "MEMBER_ID")
-    private User user;
+public class ReservationDto {
 
     private String rep_name;
     private String studentNumber;
@@ -32,4 +18,5 @@ public class Reservation {
     private LocalDateTime dateTime;
     private String detailPlace;
     private String choicePurpose;
+
 }
