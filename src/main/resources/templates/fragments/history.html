@@ -1,0 +1,58 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header">
+  <head>
+    <meta charset="UTF-8">
+    <title>sign up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+  </head>
+<body>
+<div th:replace="fragments/nav"></div>
+<div class="container">
+  <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>행사명</th>
+        <th>장소</th>
+        <th>날짜</th>
+        <th>시간</th>
+        <th>삭제</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>1</td>
+        <td>축구동호회</td>
+        <td>운동장</td>
+        <td>2022.08.16</td>
+        <td>10:00 ~ 12:00</td>
+        <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>학습동아리</td>
+        <td>중앙도서관</td>
+        <td>2022.09.02</td>
+        <td>02:00 ~ 04:00</td>
+        <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>운동동아리</td>
+        <td>전자정보도서관</td>
+        <td>2022.09.20</td>
+        <td>10:00 ~ 12:00</td>
+        <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div th:replace="fragments/footer"></div>
+
+</body>
+</html>
