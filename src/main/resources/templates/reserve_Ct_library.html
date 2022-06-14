@@ -35,14 +35,14 @@
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
                         <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">중앙도서관 예약</h3>
-                        <form>
+                        <form action="#" th:action="@{/reserve_Ct_library}" th:object="${reserve_Ct_library}" method="post">
 
                             <div class="row">
                                 <div class="col-md-6 mb-4">
 
                                     <div class="form-outline">
                                         <label class="form-label" for="Name_Ct">대표자 이름</label>
-                                        <input type="text" id="Name_Ct" class="form-control form-control-lg" />
+                                        <input type="text" id="Name_Ct" class="form-control form-control-lg" name="Name_Ct" />
                                     </div>
 
                                 </div>
@@ -50,7 +50,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="ID_Ct">학번</label>
-                                        <input type="text" id="ID_Ct" class="form-control form-control-lg" />
+                                        <input type="text" id="ID_Ct" class="form-control form-control-lg" name="ID_Ct" />
                                     </div>
 
                                 </div>
@@ -61,7 +61,7 @@
 
                                     <div class="form-outline datepicker w-100">
                                         <label for="Purpose_Ct" class="form-label">이용 용도</label>
-                                        <input type="text" class="form-control form-control-lg" id="Purpose_Ct" />
+                                        <input type="text" class="form-control form-control-lg" id="Purpose_Ct" name="Purpose_Ct"/>
                                     </div>
 
                                 </div>
@@ -73,7 +73,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="Phone_Ct">대표자 연락처</label>
-                                        <input type="string" id="Phone_Ct" class="form-control form-control-lg" />
+                                        <input type="string" id="Phone_Ct" class="form-control form-control-lg" name="Phone_Ct"/>
                                     </div>
 
                                 </div>
@@ -81,7 +81,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="People_Ct">인원</label>
-                                        <input type="tel" id="People_Ct" class="form-control form-control-lg" />
+                                        <input type="tel" id="People_Ct" class="form-control form-control-lg" name="People_Ct"/>
                                     </div>
 
                                 </div>
@@ -90,7 +90,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <label class="form-label col-2 select-label">세부 장소</label>
-                                    <select class="select col-4 form-control-lg">
+                                    <select class="select col-4 form-control-lg" id="select" name="select">
                                         <option value="1" disabled>Choose option</option>
                                         <option value="2">유레카-CAN</option>
                                         <option value="3">유레카-For</option>
@@ -106,7 +106,8 @@
                                     <!-- https://www.w3schools.com/tags/att_input_type_date.asp -->
                                 </div>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-primary me-md-2" type="button">예약</button>
+                                    <a th:href="@{/history}"/>
+                                    <button class="btn btn-primary me-md-2" type="button" >예약</button>
                                 </div>
                             </div>
                         </form>

@@ -1,12 +1,20 @@
 package shop.swengineering.home.controller;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import shop.swengineering.home.domain.reservation.Reservation;
+import shop.swengineering.home.domain.reservation.ReservationRepository;
 
+@RequiredArgsConstructor
+@Controller
 public class ReserveController {
+
+    private ReservationRepository reservationRepository;
+
     @GetMapping("/reserve_Ct_library")
     public String reserve_Ct_library() {
         return "/reserve_Ct_library";
@@ -23,30 +31,41 @@ public class ReserveController {
     }
 
     @GetMapping("/reserve_gym")
-    public String reserve_gym() {return "/reserve_gym";
+    public String reserve_gym() {
+        return "/reserve_gym";
+    }
+
+    @GetMapping("/history")
+    public String history(){
+        return "/history";
     }
 
     @PostMapping("/reserve_Ct_library")
     public String reserve_ct_save(@ModelAttribute Reservation reservation, Model model) {
-        model.addAttribute("reservation",reservation);
+        model.addAttribute("reservation", reservation);
+        reservationRepository.save(reservation);
         return "/history";
     }
 
-    @PostMapping
+    @PostMapping("reserve_ground")
     public String reserve_ground_save(@ModelAttribute Reservation reservation, Model model) {
-        model.addAttribute("reservation",reservation);
+        model.addAttribute("reservation", reservation);
+        reservationRepository.save(reservation);
         return "/history";
     }
 
-    @PostMapping
+    @PostMapping("reserve_elec_library")
     public String reserve_elec_save(@ModelAttribute Reservation reservation, Model model) {
-        model.addAttribute("reservation",reservation);
+        model.addAttribute("reservation", reservation);
+        reservationRepository.save(reservation);
         return "/history";
     }
 
-    @PostMapping
+    @PostMapping("reserve_gym")
     public String reserve_gym_save(@ModelAttribute Reservation reservation, Model model) {
-        model.addAttribute("reservation",reservation);
+        model.addAttribute("reservation", reservation);
+        reservationRepository.save(reservation);
         return "/history";
     }
+
 }
