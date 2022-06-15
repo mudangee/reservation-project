@@ -46,21 +46,17 @@ public class ReserveController {
     @PostMapping("/reserve_Ct_library")
     public String reserve_ct_save(@ModelAttribute ReservationDto reservationDto, Model model) {
         model.addAttribute("reservation", reservationDto);
-        System.out.println(reservationDto.getRep_name());
-        System.out.println(reservationDto.getPersonNum());
-        System.out.println(reservationDto.getResPurpose());
-        System.out.println(reservationDto.getStudentNumber());
-        System.out.println(reservationDto.getChoicePurpose());
-        System.out.println(reservationDto.getDetailPlace());
-        //System.out.println(reservationDto.get);
 
         Reservation reservation = new Reservation();
+        reservation.setPlace("중앙도서관");
         reservation.setRep_name(reservationDto.getRep_name());
-        reservation.setChoicePurpose(reservationDto.getChoicePurpose());
         reservation.setDateTime(reservationDto.getDateTime());
         reservation.setPersonNum(reservationDto.getPersonNum());
         reservation.setDetailPlace(reservationDto.getDetailPlace());
         reservation.setChoicePurpose(reservationDto.getChoicePurpose());
+        reservation.setPhoneNum(reservationDto.getPhoneNum());
+        reservation.setStudentNumber(reservationDto.getStudentNumber());
+        reservation.setResPurpose(reservationDto.getResPurpose());
         reservationRepository.save(reservation);
         return "/history";
     }
