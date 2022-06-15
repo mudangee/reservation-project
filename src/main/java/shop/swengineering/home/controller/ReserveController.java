@@ -16,7 +16,7 @@ import java.sql.SQLOutput;
 @Controller
 public class ReserveController {
 
-    private ReservationRepository reservationRepository;
+    private final ReservationRepository reservationRepository;
 
     @GetMapping("/reserve_Ct_library")
     public String reserve_Ct_library() {
@@ -54,11 +54,14 @@ public class ReserveController {
         System.out.println(reservationDto.getDetailPlace());
         //System.out.println(reservationDto.get);
 
-//        Reservation reservation = new Reservation();
-//        reservation.setRep_name(reservationDto.getRep_name());
-//        reservation.setChoicePurpose(reservationDto.getChoicePurpose());
-//        reservation.setDateTime(reservationDto.getDateTime());
-//        reservationRepository.save(reservation);
+        Reservation reservation = new Reservation();
+        reservation.setRep_name(reservationDto.getRep_name());
+        reservation.setChoicePurpose(reservationDto.getChoicePurpose());
+        reservation.setDateTime(reservationDto.getDateTime());
+        reservation.setPersonNum(reservationDto.getPersonNum());
+        reservation.setDetailPlace(reservationDto.getDetailPlace());
+        reservation.setChoicePurpose(reservationDto.getChoicePurpose());
+        reservationRepository.save(reservation);
         return "/history";
     }
 
