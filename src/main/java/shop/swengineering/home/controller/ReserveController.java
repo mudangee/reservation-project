@@ -11,6 +11,7 @@ import shop.swengineering.home.domain.reservation.ReservationRepository;
 import shop.swengineering.home.domain.reservation.dto.ReservationDto;
 
 import java.sql.SQLOutput;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
@@ -39,7 +40,9 @@ public class ReserveController {
     }
 
     @GetMapping("/history")
-    public String history(){
+    public String history(ReservationDto reservationDto, Model model) {
+        List<Reservation> reservation = reservationRepository.findAll();
+        model.addAttribute("reservation", reservation);
         return "/history";
     }
 
@@ -84,6 +87,12 @@ public class ReserveController {
         model.addAttribute("reservation", reservation);
         reservationRepository.save(reservation);
         return "/history";
+    }
+
+    @PostMapping("/history")
+    public String history_delete(@ModelAttribute Reservation reservation, Model model) {
+        reservationRepository.delete(reservation);
+        return "redirect:/history";
     }
 
 }
