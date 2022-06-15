@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Setter
 public class ReservationDto {
 
+    private String place;
     private String rep_name;
     private String studentNumber;
     private String resPurpose;
@@ -18,5 +19,6 @@ public class ReservationDto {
     private LocalDateTime dateTime;
     private String detailPlace;
     private String choicePurpose;
+    private String phoneNum;
 
 }

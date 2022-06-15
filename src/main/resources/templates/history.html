@@ -3,41 +3,38 @@
 <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
 <!------ Include the above in your HEAD tag ---------->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html>
 <head th:replace="fragments/header"></head>
-  <head>
-    <meta charset="UTF-8">
-    <title>sign up</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-  </head>
 <body>
 <div th:replace="fragments/nav"></div>
-<div class="container">
-  <div class="row col-md-6 col-md-offset-2 custyle">
-    <table class="table table-striped custab">
-      <form  th:action="@{/history}"  method="post">
-        <thead>
-          <tr>
-            <th scope="col">ID</th>
-            <th scope="col>행사명</th>
-            <th scope="col>장소</th>
-            <th scope="col>날짜</th>
-            <th scope="col>시간</th>
-            <th scope="col>삭제</th>
-          </tr>
-        </thead>
-          <tbody>
-            <tr th:each="reservations : ${reservation}">
-              <td th:text="${reservations.reservation_id}">축구동호회</td>
-              <td th:text="${reservations.choicePurpose}">운동장</td>
-              <td th:text="${reservations.detail_place}">2022.08.16</td>
-              <td th:text="${reservations.dateTime}">10:00 ~ 12:00</td>
-              <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+<div class="container-fluid pt-5">
+  <div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+      <table class="table table-striped custab">
+        <form  th:action="@{/history}"  method="post">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">행사명</th>
+              <th scope="col">장소</th>
+              <th scope="col">날짜</th>
+              <th scope="col">시간</th>
+              <th scope="col">삭제</th>
             </tr>
-        </thead>
-      </form>
-    </table>
-  </div>
+          </thead>
+            <tbody>
+            <tr th:each="reservations : ${reservation}">
+                <td th:text="${reservations.rep_name}">축구동호회</td>
+                <td th:text="${reservations.choicePurpose}">운동장</td>
+                <td th:text="${reservations.detailPlace}">2022.08.16</td>
+                <td th:text="${reservations.dateTime}">10:00 ~ 12:00</td>
+                <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+              </tr>
+          </thead>
+        </form>
+      </table>
+    </div>
 </div>
 <div th:replace="fragments/footer"></div>
 

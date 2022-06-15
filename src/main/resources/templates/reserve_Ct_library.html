@@ -34,9 +34,8 @@
             <div class="col-12 col-lg-9 col-xl-7">
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
-                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">중앙도서관 예약</h3>
-                        <form  th:action="@{/reserve_Ct_library}"  method="post">
-
+                        <form th:action="@{/reserve_Ct_library}"  method="post">
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5"> 중앙도서관 예약 </h3>
                             <div class="row">
                                 <div class="col-md-6 mb-4">
 
@@ -47,10 +46,9 @@
 
                                 </div>
                                 <div class="col-md-6 mb-4">
-
                                     <div class="form-outline">
                                         <label class="form-label" for="ID_Ct">학번</label>
-                                        <input type="text" id="ID_Ct" class="form-control form-control-lg" name="studentNumber" required />
+                                        <input type="text" id="ID_Ct" class="form-control form-control-lg" name="studentNumber" required/>
                                     </div>
 
                                 </div>
@@ -59,9 +57,9 @@
                             <div class="row">
                                 <div class="col-md-15 mb-4 d-flex align-items-center">
 
-                                    <div class="form-outline datepicker w-100">
+                                    <div class="form-outline">
                                         <label for="Purpose_Ct" class="form-label">이용 용도</label>
-                                        <input type="text" class="form-control form-control-lg" id="Purpose_Ct" name="resPurpose" required/>
+                                        <input type="text" id="Purpose_Ct" class="form-control form-control-lg"  name="resPurpose" required/>
                                     </div>
 
                                 </div>
@@ -73,7 +71,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="Phone_Ct">대표자 연락처</label>
-                                        <input type="text" id="Phone_Ct" class="form-control form-control-lg" name="Phone_Ct" required/>
+                                        <input type="text" id="Phone_Ct" class="form-control form-control-lg" name="phoneNum" required/>
                                     </div>
 
                                 </div>
@@ -81,7 +79,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="People_Ct">인원</label>
-                                        <input type="tel" id="People_Ct" class="form-control form-control-lg" name="personNum" required/>
+                                        <input type="number" id="People_Ct" class="form-control form-control-lg" name="personNum" required/>
                                     </div>
 
                                 </div>
@@ -92,22 +90,23 @@
                                     <label class="form-label col-2 select-label">세부 장소</label>
                                     <select class="select col-4 form-control-lg" id="select" name="detailPlace">
                                         <option value="1" disabled>Choose option</option>
-                                        <option value="2">유레카-CAN</option>
-                                        <option value="3">유레카-For</option>
-                                        <option value="4">유레카-WHY</option>
-                                        <option value="5">유레카-How</option>
-                                        <option value="6">유레카-IF</option>
-                                        <option value="7">유레카-But</option>
+                                        <option value="유레카-CAN">유레카-CAN</option>
+                                        <option value="유레카-For">유레카-For</option>
+                                        <option value="유레카-WHY">유레카-WHY</option>
+                                        <option value="유레카-How">유레카-How</option>
+                                        <option value="유레카-IF">유레카-IF</option>
+                                        <option value="유레카-But">유레카-But</option>
                                     </select>
                                     <form class="">
                                         <label for="reservationDate">예약일자:</label>
                                         <input type="date" id="reservationDate" name="dateTime">
                                     </form>
                                     <!-- https://www.w3schools.com/tags/att_input_type_date.asp -->
+                                    </div>
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                      <button class="btn btn-primary me-md-2" type="submit" >예약</button>
                                 </div>
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <button class="btn btn-primary me-md-2" type="submit" >예약</button>
-                                </div>
+
                             </div>
                         </form>
                     </div>

@@ -25,6 +25,8 @@ public class Reservation {
     @JoinColumn(name = "MEMBER_ID")
     private User user;
 
+    private String place;
+
     private String rep_name;
     private String studentNumber;
     private String resPurpose;
@@ -32,4 +34,6 @@ public class Reservation {
     private LocalDateTime dateTime;
     private String detailPlace;
     private String choicePurpose;
+    private String phoneNum;
+
 }
