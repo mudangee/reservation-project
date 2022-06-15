@@ -49,42 +49,72 @@ public class ReserveController {
     @PostMapping("/reserve_Ct_library")
     public String reserve_ct_save(@ModelAttribute ReservationDto reservationDto, Model model) {
         model.addAttribute("reservation", reservationDto);
-        System.out.println(reservationDto.getRep_name());
-        System.out.println(reservationDto.getPersonNum());
-        System.out.println(reservationDto.getResPurpose());
-        System.out.println(reservationDto.getStudentNumber());
-        System.out.println(reservationDto.getChoicePurpose());
-        System.out.println(reservationDto.getDetailPlace());
-        //System.out.println(reservationDto.get);
 
         Reservation reservation = new Reservation();
+        reservation.setPlace("중앙도서관");
         reservation.setRep_name(reservationDto.getRep_name());
-        reservation.setChoicePurpose(reservationDto.getChoicePurpose());
         reservation.setDateTime(reservationDto.getDateTime());
         reservation.setPersonNum(reservationDto.getPersonNum());
         reservation.setDetailPlace(reservationDto.getDetailPlace());
         reservation.setChoicePurpose(reservationDto.getChoicePurpose());
+        reservation.setPhoneNum(reservationDto.getPhoneNum());
+        reservation.setStudentNumber(reservationDto.getStudentNumber());
+        reservation.setResPurpose(reservationDto.getResPurpose());
         reservationRepository.save(reservation);
+
         return "/history";
     }
 
     @PostMapping("reserve_ground")
-    public String reserve_ground_save(@ModelAttribute Reservation reservation, Model model) {
-        model.addAttribute("reservation", reservation);
+    public String reserve_ground_save(@ModelAttribute ReservationDto reservationDto, Model model) {
+        model.addAttribute("reservation", reservationDto);
+
+        Reservation reservation = new Reservation();
+        reservation.setPlace("운동장");
+        reservation.setRep_name(reservationDto.getRep_name());
+        reservation.setDateTime(reservationDto.getDateTime());
+        reservation.setPersonNum(reservationDto.getPersonNum());
+        reservation.setDetailPlace(reservationDto.getDetailPlace());
+        reservation.setChoicePurpose(reservationDto.getChoicePurpose());
+        reservation.setPhoneNum(reservationDto.getPhoneNum());
+        reservation.setStudentNumber(reservationDto.getStudentNumber());
+        reservation.setResPurpose(reservationDto.getResPurpose());
         reservationRepository.save(reservation);
         return "/history";
     }
 
     @PostMapping("reserve_elec_library")
-    public String reserve_elec_save(@ModelAttribute Reservation reservation, Model model) {
-        model.addAttribute("reservation", reservation);
+    public String reserve_elec_save(@ModelAttribute ReservationDto reservationDto, Model model) {
+        model.addAttribute("reservation", reservationDto);
+
+        Reservation reservation = new Reservation();
+        reservation.setPlace("전자정보도서관");
+        reservation.setRep_name(reservationDto.getRep_name());
+        reservation.setDateTime(reservationDto.getDateTime());
+        reservation.setPersonNum(reservationDto.getPersonNum());
+        reservation.setDetailPlace(reservationDto.getDetailPlace());
+        reservation.setChoicePurpose(reservationDto.getChoicePurpose());
+        reservation.setPhoneNum(reservationDto.getPhoneNum());
+        reservation.setStudentNumber(reservationDto.getStudentNumber());
+        reservation.setResPurpose(reservationDto.getResPurpose());
         reservationRepository.save(reservation);
         return "/history";
     }
 
     @PostMapping("reserve_gym")
-    public String reserve_gym_save(@ModelAttribute Reservation reservation, Model model) {
-        model.addAttribute("reservation", reservation);
+    public String reserve_gym_save(@ModelAttribute ReservationDto reservationDto, Model model) {
+        model.addAttribute("reservation", reservationDto);
+
+        Reservation reservation = new Reservation();
+        reservation.setPlace("체육관");
+        reservation.setRep_name(reservationDto.getRep_name());
+        reservation.setDateTime(reservationDto.getDateTime());
+        reservation.setPersonNum(reservationDto.getPersonNum());
+        reservation.setDetailPlace(reservationDto.getDetailPlace());
+        reservation.setChoicePurpose(reservationDto.getChoicePurpose());
+        reservation.setPhoneNum(reservationDto.getPhoneNum());
+        reservation.setStudentNumber(reservationDto.getStudentNumber());
+        reservation.setResPurpose(reservationDto.getResPurpose());
         reservationRepository.save(reservation);
         return "/history";
     }

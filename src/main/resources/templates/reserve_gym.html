@@ -32,14 +32,14 @@
                 <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                     <div class="card-body p-4 p-md-5">
                         <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">체육관 예약</h3>
-                        <form>
+                        <form  th:action="@{/reserve_ground}"  method="post">
 
                             <div class="row">
                                 <div class="col-md-6 mb-4">
 
                                     <div class="form-outline">
                                         <label class="form-label" for="Name_gym">대표자 이름</label>
-                                        <input type="text" id="Name_gym" class="form-control form-control-lg" />
+                                        <input type="text" id="Name_gym" class="form-control form-control-lg" name="rep_name" required />
                                     </div>
 
                                 </div>
@@ -47,7 +47,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="ID_gym">학번</label>
-                                        <input type="text" id="ID_gym" class="form-control form-control-lg" />
+                                        <input type="text" id="ID_gym" class="form-control form-control-lg"  name="studentNumber" required/>
                                     </div>
 
                                 </div>
@@ -58,7 +58,7 @@
 
                                     <div class="form-outline datepicker w-100">
                                         <label for="Phone_gym" class="form-label">대표자 연락처</label>
-                                        <input type="text" class="form-control form-control-lg" id="Phone_gym" />
+                                        <input type="text" class="form-control form-control-lg" id="Phone_gym" name="phoneNum" required />
                                     </div>
 
                                 </div>
@@ -68,20 +68,20 @@
                                     <h6 class="mb-2 pb-1">목적: </h6>
 
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Event_gym"
-                                               value="option1" checked />
+                                        <input class="form-check-input" type="radio"  id="Event_gym" name ="choicePurpose" required
+                                               value="행사" checked />
                                         <label class="form-check-label" for="Event_gym">행사</label>
                                     </div>
 
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Sport_gym"
-                                               value="option2" />
+                                        <input class="form-check-input" type="radio"  id="Sport_gym" name ="choicePurpose" required
+                                               value="운동경기" />
                                         <label class="form-check-label" for="Sport_gym">운동경기</label>
                                     </div>
 
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Other_gym"
-                                               value="option3" />
+                                        <input class="form-check-input" type="radio"  id="Other_gym" name ="choicePurpose" required
+                                               value="기타" />
                                         <label class="form-check-label" for="Other_gym">기타</label>
                                     </div>
 
@@ -93,7 +93,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="Purpose_gym">목적 설명</label>
-                                        <input type="email" id="Purpose_gym" class="form-control form-control-lg" />
+                                        <input type="text" id="Purpose_gym" class="form-control form-control-lg"  name="resPurpose" required/>
                                     </div>
 
                                 </div>
@@ -101,7 +101,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" for="People_gym">인원</label>
-                                        <input type="tel" id="People_gym" class="form-control form-control-lg" />
+                                        <input type="tel" id="People_gym" class="form-control form-control-lg" name="personNum" required />
                                     </div>
 
                                 </div>
@@ -109,13 +109,13 @@
                             <form class="">
                                 <label for="reservationDate">예약일자:</label>
                                 <input type="date" id="reservationDate" name="reservationDate">
-                            </form>
+
                             <!-- https://www.w3schools.com/tags/att_input_type_date.asp -->
 
-                            <div class="mr-15 mt-8 pt-10">
-                                <input class="btn btn-primary btn-lg" style = float:right type="날짜선택" value="날짜선택" />
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button class="btn btn-primary me-md-2" type="submit" >예약</button>
                             </div>
-
+                            </form>
                         </form>
                     </div>
                 </div>
